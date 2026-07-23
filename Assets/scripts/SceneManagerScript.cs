@@ -10,6 +10,9 @@ public class SceneManagerScript : MonoBehaviour
     void Awake() => instance = this;
 
     public Image fadeImage;
+
+    public GameObject howtoplay;
+
     void Start()
     {
         StartCoroutine(FadeOut());
@@ -74,5 +77,15 @@ public class SceneManagerScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void HowToPlay()
+    {
+        howtoplay.SetActive(howtoplay.activeSelf ^ true);
     }
 }
